@@ -1,0 +1,40 @@
+def username():
+    username = input("Enter what you would like your username to be: ")
+    print("Username created successfully")
+    return username
+def password():
+    password = input("Enter what you would like your password to be: ")
+    print("Password created successfully")
+    return password
+
+username = username()
+password = password()
+
+def login():
+    total_triesUser=0
+    total_triesPass=0
+    print("Your account was created successfully now you must login.")
+    while total_triesUser<4 and total_triesPass<4:      
+        theUsername = str(input("Enter your username, the press Return/Enter: "))
+        if theUsername == username:
+            total_triesUser+=4
+            print("Username successful")
+            while total_triesPass<4:
+                thePassword=str(input("Enter the password, then press Return/Enter: "))
+                if thePassword == password:
+                    total_triesPass+=4
+                    print("Password successful")
+                else:
+                    print("Unable to log in. ")
+                    total_triesPass+=1
+                    if total_triesPass>3:
+                        print("You have been locked out from attempting to login too many times.")
+                        break
+        else:
+            print("Username Incorrect.")
+            total_triesUser+=1
+            if total_triesUser>3:
+                print("You have been locked out from attempting to loging too many times.")
+                break
+
+login()
