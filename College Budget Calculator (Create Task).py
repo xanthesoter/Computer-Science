@@ -1,16 +1,20 @@
-# College Budget Calculator for
+# College Budget Calculator
 
 import time
 
 print(time.asctime())
 
+print("Create an account and login before you can run the calculator.")
+
 def username():
     username = input("Enter what you would like your username to be: ")
     print("Username created successfully")
+    print(" ")
     return username
 def password():
     password = input("Enter what you would like your password to be: ")
     print("Password created successfully")
+    print(" ")
     return password
 
 username = username()
@@ -20,27 +24,32 @@ def login():
     total_triesUser=0
     total_triesPass=0
     print("Your account was created successfully now you must login.")
+    print(" ")
     while total_triesUser<4 and total_triesPass<4:      
         theUsername = str(input("Enter your username, the press Return/Enter: "))
         if theUsername == username:
             total_triesUser+=4
             print("Username successful")
+            print(" ")
             while total_triesPass<4:
                 thePassword=str(input("Enter the password, then press Return/Enter: "))
                 if thePassword == password:
                     total_triesPass+=4
                     print("Password successful")
+                    print(" ")
                 else:
                     print("Unable to log in. ")
                     total_triesPass+=1
                     if total_triesPass>3:
                         print("You have been locked out from attempting to login too many times.")
+                        print(" ")
                         break
         else:
             print("Username Incorrect.")
             total_triesUser+=1
             if total_triesUser>3:
                 print("You have been locked out from attempting to loging too many times.")
+                print(" ")
                 break
 
 login()
@@ -52,7 +61,7 @@ Follow the questions and in the end a reciept based on your anwsers will be prin
         userInput = int(input("How much is tuition?: "))
         return userInput
     def room():
-        userInput = input(""" Dorm room types:
+        userInput = input("""Dorm room types:
                                     A. Single
                                     B. Double
                                     C. Triple
@@ -78,12 +87,12 @@ Follow the questions and in the end a reciept based on your anwsers will be prin
 
     def meal_plan():
         userInput = input("""Meal Plans:
-                                        A. Regular 5
-                                        B. Regular 10
-                                        C. Premium 5
-                                        D. Premium 10
-                                        E. Unlimited
-                                        What type of meal plan do you want?: """)
+                                    A. Regular 5
+                                    B. Regular 10
+                                    C. Premium 5
+                                    D. Premium 10
+                                    E. Unlimited
+                                    What type of meal plan do you want?: """)
         if userInput == "A" or userInput == "a":
             return 245
         elif userInput == "B" or userInput == "b":
